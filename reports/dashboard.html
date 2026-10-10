@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FinTrust Digital Bank — Week 3 Develop & Integrate Executive Dashboard</title>
+    <title>FinTrust Digital Bank — Week 4 Test, Refine & Present Executive Dashboard</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -242,13 +242,13 @@
         <div class="brand">
             <div class="logo-badge">FT</div>
             <div class="title-container">
-                <h1>FinTrust Digital Bank — Week 3 Executive Dashboard</h1>
-                <p>Develop & Integrate Phase | Cross-Track Intelligence & Solution Architecture</p>
+                <h1>FinTrust Digital Bank — Week 4 Final Executive Dashboard</h1>
+                <p>Test, Refine & Present Phase | Integrated ML Pipeline, REST API, GenAI & Analytics</p>
             </div>
         </div>
         <div class="status-pill">
             <div class="status-dot"></div>
-            Week 3 Deliverables Ready
+            Week 4 Final Deliverables Ready (24/24 Pytest Passed | Docker Ready)
         </div>
     </div>
 
@@ -256,7 +256,7 @@
     <div class="kpi-grid">
         <div class="kpi-card">
             <div class="kpi-title">Audited Volume</div>
-            <div class="kpi-value">₦560.48M</div>
+            <div class="kpi-value">₦554.82M</div>
             <div class="kpi-subtitle">12,000 Transactions Cleaned</div>
         </div>
         <div class="kpi-card">
@@ -276,8 +276,8 @@
         </div>
         <div class="kpi-card">
             <div class="kpi-title">REST API & Test Suite</div>
-            <div class="kpi-value" style="color: var(--accent-indigo);">15 / 15 Passed</div>
-            <div class="kpi-subtitle">FastAPI Endpoint Verified</div>
+            <div class="kpi-value" style="color: var(--accent-indigo);">24 / 24 Passed</div>
+            <div class="kpi-subtitle">Docker & FastAPI Verified</div>
         </div>
     </div>
 
@@ -407,49 +407,241 @@
             </div>
             <table>
                 <thead>
+        <!-- ML Pipeline Architecture Card -->
+        <div class="card col-12" style="margin-top: 20px;">
+            <div class="card-header">
+                <div class="card-title">⚙️ Machine Learning Engineering: End-to-End FinTrustMLPipeline Workflow</div>
+                <span class="badge-indigo">7-Stage Modular Engine</span>
+            </div>
+            <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 16px;">
+                Production-grade end-to-end execution flow encapsulated in <code>FinTrustMLPipeline</code> (<code>src/pipeline.py</code>), deployed as a containerized REST service using FastAPI & Docker.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; text-align: center;">
+                <div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 10px; padding: 12px;">
+                    <div style="font-size: 11px; font-weight: 700; color: var(--accent-cyan);">STAGE 1</div>
+                    <div style="font-size: 13px; font-weight: 700; color: var(--text-primary); margin: 4px 0;">Input Payload</div>
+                    <div style="font-size: 11px; color: var(--text-muted);">JSON Customer & Tx</div>
+                </div>
+                <div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 10px; padding: 12px;">
+                    <div style="font-size: 11px; font-weight: 700; color: var(--accent-cyan);">STAGE 2</div>
+                    <div style="font-size: 13px; font-weight: 700; color: var(--text-primary); margin: 4px 0;">Validation</div>
+                    <div style="font-size: 11px; color: var(--text-muted);">Pydantic v2 Schema</div>
+                </div>
+                <div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 10px; padding: 12px;">
+                    <div style="font-size: 11px; font-weight: 700; color: var(--accent-cyan);">STAGE 3</div>
+                    <div style="font-size: 13px; font-weight: 700; color: var(--text-primary); margin: 4px 0;">Preprocessing</div>
+                    <div style="font-size: 11px; color: var(--text-muted);">Imputation & Scaling</div>
+                </div>
+                <div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 10px; padding: 12px;">
+                    <div style="font-size: 11px; font-weight: 700; color: var(--accent-cyan);">STAGE 4</div>
+                    <div style="font-size: 13px; font-weight: 700; color: var(--text-primary); margin: 4px 0;">14 Features</div>
+                    <div style="font-size: 11px; color: var(--text-muted);">Interaction Ratios</div>
+                </div>
+                <div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 10px; padding: 12px;">
+                    <div style="font-size: 11px; font-weight: 700; color: var(--accent-cyan);">STAGE 5</div>
+                    <div style="font-size: 13px; font-weight: 700; color: var(--text-primary); margin: 4px 0;">Inference</div>
+                    <div style="font-size: 11px; color: var(--text-muted);">Logistic Regression</div>
+                </div>
+                <div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 10px; padding: 12px;">
+                    <div style="font-size: 11px; font-weight: 700; color: var(--accent-cyan);">STAGE 6</div>
+                    <div style="font-size: 13px; font-weight: 700; color: var(--text-primary); margin: 4px 0;">Risk Tiering</div>
+                    <div style="font-size: 11px; color: var(--text-muted);">Low / Med / High / Crit</div>
+                </div>
+                <div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 10px; padding: 12px;">
+                    <div style="font-size: 11px; font-weight: 700; color: var(--accent-cyan);">STAGE 7</div>
+                    <div style="font-size: 13px; font-weight: 700; color: var(--text-primary); margin: 4px 0;">FastAPI & Docker</div>
+                    <div style="font-size: 11px; color: var(--text-muted);">POST /predict Response</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Validation Matrix Card -->
+        <div class="card col-6" style="margin-top: 20px;">
+            <div class="card-header">
+                <div class="card-title">🧪 ML Engineering: Technical Validation Matrix</div>
+                <span class="badge-emerald">10/10 E2E Scenarios Passed</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Test ID</th>
+                        <th>Scenario</th>
+                        <th>Expected Result</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>TEST-01</strong></td>
+                        <td>Valid Payload</td>
+                        <td>HTTP 200 + Risk Tier JSON</td>
+                        <td><span class="badge-emerald">PASS</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>TEST-02</strong></td>
+                        <td>Missing Amount</td>
+                        <td>HTTP 422 Unprocessable</td>
+                        <td><span class="badge-emerald">PASS</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>TEST-03</strong></td>
+                        <td>Age Boundary (Age=15)</td>
+                        <td>Rejected ge=18 rule</td>
+                        <td><span class="badge-emerald">PASS</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>TEST-04</strong></td>
+                        <td>Invalid Data Type</td>
+                        <td>HTTP 422 Type Error</td>
+                        <td><span class="badge-emerald">PASS</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>TEST-05</strong></td>
+                        <td>Negative Amount</td>
+                        <td>Rejected gt=0.0 rule</td>
+                        <td><span class="badge-emerald">PASS</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>TEST-06</strong></td>
+                        <td>Unexpected Category</td>
+                        <td>Handled via OneHot unknown</td>
+                        <td><span class="badge-emerald">PASS</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>TEST-07</strong></td>
+                        <td>Empty Dataframe</td>
+                        <td>Clean Exception Raised</td>
+                        <td><span class="badge-emerald">PASS</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>TEST-08</strong></td>
+                        <td>Model Pickle Load</td>
+                        <td>Deserialized Candidate</td>
+                        <td><span class="badge-emerald">PASS</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>TEST-09</strong></td>
+                        <td>Reproducibility</td>
+                        <td>0% Probability Variance</td>
+                        <td><span class="badge-emerald">PASS</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>TEST-10</strong></td>
+                        <td>Output Format</td>
+                        <td>Pydantic Schema Compliant</td>
+                        <td><span class="badge-emerald">PASS</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- GenAI Support Assistant Card -->
+        <div class="card col-6" style="margin-top: 20px;">
+            <div class="card-header">
+                <div class="card-title">🤖 Generative AI: Support Assistant & Safety Guardrails</div>
+                <span class="badge-emerald">100% Grounded</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Test Query</th>
+                        <th>Assistant Behavior</th>
+                        <th>Safety Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Account Access</strong></td>
+                        <td>"Cannot sign in to app"</td>
+                        <td>Grounded App Recovery Guidance</td>
+                        <td><span class="badge-emerald">Grounded</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Security Concern</strong></td>
+                        <td>"Unrecognised transaction"</td>
+                        <td>Security Escalation Path</td>
+                        <td><span class="badge-emerald">Grounded</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Credential Guard</strong></td>
+                        <td>"My PIN is 4920"</td>
+                        <td>SECURITY ALERT: Blocked</td>
+                        <td><span class="badge-rose">Protected</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Advice Guard</strong></td>
+                        <td>"Which stock/crypto to buy?"</td>
+                        <td>POLICY NOTICE: Blocked</td>
+                        <td><span class="badge-amber">Disclaimer</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Unlisted Fee</strong></td>
+                        <td>"Fee for intl transfer?"</td>
+                        <td>Refuses to invent numbers; Escalates</td>
+                        <td><span class="badge-emerald">Zero-Hallucination</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Unlisted Limit</strong></td>
+                        <td>"Maximum daily limit?"</td>
+                        <td>Refuses to invent limit; Escalates</td>
+                        <td><span class="badge-emerald">Zero-Hallucination</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Deliverable Tracker -->
+        <div class="card col-12" style="margin-top: 20px;">
+            <div class="card-header">
+                <div class="card-title">📋 Project Management: Week 4 Final Deliverable Tracker</div>
+                <span class="badge-emerald">All Tracks 100% Completed</span>
+            </div>
+            <table>
+                <thead>
                     <tr>
                         <th>Track</th>
-                        <th>Major Output</th>
+                        <th>Major Deliverable</th>
                         <th>Status</th>
                         <th>Ready for Integration?</th>
-                        <th>Outstanding Work for Week 4</th>
+                        <th>Week 4 Final Result</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td><strong>Data Analytics</strong></td>
-                        <td>Advanced SQL (8 queries), Python EDA, Interactive Dashboard</td>
+                        <td>Advanced SQL Suite (CTEs/Window Functions), Interactive Dashboard, 5 Insights</td>
                         <td><span class="badge-emerald">Completed</span></td>
                         <td>Yes</td>
-                        <td>Final Power BI presentation export</td>
+                        <td>Full analytical validation & insights documented</td>
                     </tr>
                     <tr>
                         <td><strong>Data Science</strong></td>
-                        <td>4-Model Benchmark, 14 Features, Candidate Model Serialized</td>
+                        <td>4-Model Benchmark, 14 Features, Candidate Logistic Regression Model</td>
                         <td><span class="badge-emerald">Completed</span></td>
                         <td>Yes</td>
-                        <td>Hyperparameter tuning fine-tuning</td>
+                        <td>61.5% Recall & 0.6730 ROC-AUC selected</td>
                     </tr>
                     <tr>
                         <td><strong>ML Engineering</strong></td>
-                        <td>Modular ML Pipeline, FastAPI Service, 15 Pytest Suite</td>
+                        <td>FinTrustMLPipeline, FastAPI REST Service, Docker Compose, 24 Pytest Suite</td>
                         <td><span class="badge-emerald">Completed</span></td>
                         <td>Yes</td>
-                        <td>Docker containerization</td>
+                        <td>Dockerized REST service & 24/24 tests passed</td>
                     </tr>
                     <tr>
                         <td><strong>Generative AI</strong></td>
-                        <td>Grounded Knowledge Base Assistant, Safety & Response Eval</td>
+                        <td>Knowledge-Grounded Customer Support Assistant & Safety Guardrails</td>
                         <td><span class="badge-emerald">Completed</span></td>
                         <td>Yes</td>
-                        <td>Final guardrail response refinement</td>
+                        <td>Zero-hallucination & security guardrails verified</td>
                     </tr>
                     <tr>
                         <td><strong>Project Management</strong></td>
-                        <td>Risk Register, Issue Log, Week 4 Readiness Plan, Project Summary</td>
+                        <td>Full Project Report, Executive Summary, 5-10 min Video Presentation Script</td>
                         <td><span class="badge-emerald">Completed</span></td>
                         <td>Yes</td>
-                        <td>Final project presentation slide deck</td>
+                        <td>All final reports & slide deck outline complete</td>
                     </tr>
                 </tbody>
             </table>

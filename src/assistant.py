@@ -61,11 +61,18 @@ class FinTrustSupportAssistant:
                 "lending, or legal advice. Please speak with an authorized banking representative."
             )
 
+        # Handling Unsupported Inquiries (Fees, Limits, Unlisted Topics - Checked BEFORE general transfer)
+        if any(term in query_clean for term in ['fee', 'limit', 'charge', 'cost', 'maximum transfer']):
+            return (
+                "The training knowledge base does not define a complete fee schedule or transaction-limit table. "
+                "This information is not available in the approved knowledge base; we recommend escalating your request."
+            )
+
         # Strict Knowledge Base Retrieval
         if any(term in query_clean for term in ['cannot sign in', 'login', 'locked', 'recover', 'access']):
             return self.APPROVED_KNOWLEDGE_BASE["account_access"]
 
-        if any(term in query_clean for term in ['failed transaction', 'payment failed', 'failed payment']):
+        if any(term in query_clean for term in ['failed', 'failed transaction', 'payment failed', 'failed payment']):
             return self.APPROVED_KNOWLEDGE_BASE["failed_transaction"]
 
         if any(term in query_clean for term in ['reversed', 'reversal']):
@@ -74,18 +81,11 @@ class FinTrustSupportAssistant:
         if any(term in query_clean for term in ['unrecognised', 'unrecognized', 'did not make', 'fraud']):
             return self.APPROVED_KNOWLEDGE_BASE["unrecognised_transaction"]
 
-        if any(term in query_clean for term in ['transfer', 'pending transfer', 'send money']):
+        if any(term in query_clean for term in ['transfer', 'send money']):
             return self.APPROVED_KNOWLEDGE_BASE["transfers"]
 
         if any(term in query_clean for term in ['card', 'compromised', 'stolen card', 'lost card']):
             return self.APPROVED_KNOWLEDGE_BASE["card_compromise"]
-
-        # Handling Unsupported Inquiries (Fees, Limits, Unlisted Topics)
-        if any(term in query_clean for term in ['fee', 'limit', 'charge', 'cost', 'maximum transfer']):
-            return (
-                "The training knowledge base does not define a complete fee schedule or transaction-limit table. "
-                "This information is not available in the approved knowledge base; we recommend escalating your request."
-            )
 
         # Default Escalation Path
         return (
